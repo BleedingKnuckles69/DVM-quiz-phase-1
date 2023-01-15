@@ -1,0 +1,15 @@
+{% extends "quiz/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ quiz.author }}</a>
+              <small class="text-muted">{{ quiz.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'quiz-detail' quiz.id %}">{{ quiz.title }}</a></h2>
+            <p class="article-content">{{ quiz.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
